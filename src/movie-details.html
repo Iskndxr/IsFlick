@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        IsFlick
+      </div>
+    </div>
+    <header>
+      <button type="button" id="back-button">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+      <button type="button" id="home-button">
+        <i class="fas fa-home"></i> Home
+      </button>
+    </header>
+    <main>
+      <div class="container">
+        <div class="movie-details">
+          <div class="poster-container">
+            <img class="movie-poster">
+          </div>
+          <div class="info-container">
+            <h1 class="movie-title"></h1>
+            <p><strong>Released:</strong> <span class="released"></span></p>
+            <p><strong>Genre:</strong> <span class="genre"></span></p>
+            <p><strong>Director:</strong> <span class="director"></span></p>
+            <p><strong>Writer:</strong> <span class="writer"></span></p>
+            <p><strong>Actors:</strong> <span class="actors"></span></p>
+            <p><strong>Ratings:</strong></p>
+            <span class="ratings"></span>
+            <p><strong>imdb Rating: </strong><span class="imdb-ratings"></span></p>
+            <button type="button" class="add-to-watchlist-button">
+              <i class="fas fa-plus"></i> Watchlist
+            </button>
+          </div>
+        </div>
+        <span class="plot"></span>
+      </div>
+      <h1 id="similar-movies-title">Top Rated Simillar Movies</h1>
+      <div id="simillar-movies"></div>
+    </main>
+    <script src="details.js"></script>
+    <script>
+      const backButton = document.getElementById('back-button');
+      backButton.addEventListener('click', () => {
+        window.history.back();
+      });
+      const homeButton = document.getElementById('home-button');
+      homeButton.addEventListener('click', () => {
+        window.location.href = 'index.html';
+      });
+    </script>
+  </body>
+</html>

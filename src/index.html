@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Movie</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        IsFlick
+      </div>
+      <button id="watchlist-button">Watchlist</button>
+    </div>
+    <header>
+      <h1 style="font-family: Franklin Gothic Medium; margin-top: 50px;">Is Flick</h1>
+      <h2>A flick pick that's slick </h2>
+    </header>
+    <main>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Enter a movie title">
+        <button type="submit" id="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <p class="result-message"></p>
+      <div id="results-container">
+      </div>
+    </main>
+    <script src="renderer.js"></script>
+    <script>
+      const watchlistButton = document.getElementById('watchlist-button');
+      watchlistButton.addEventListener('click', () => {
+        window.location.href = 'watchlist.html';
+      });
+    </script>
+  </body>
+</html>
