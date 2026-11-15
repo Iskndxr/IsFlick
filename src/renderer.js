@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
   
         for (let page = 1; page <= 5; page++) {
-          const apiUrl = `https://www.omdbapi.com/?apikey=5996182c&s=*${encodeURIComponent(searchTerm)}*&page=${page}&type=movie`;
+          const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=*${encodeURIComponent(searchTerm)}*&page=${page}&type=movie`;
   
           const response = await fetch(apiUrl);
           const data = await response.json();

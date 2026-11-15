@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const movieId = getMovieIdFromUrl();
   
     if (movieId) {
-      const apiUrl = `https://www.omdbapi.com/?apikey=5996182c&i=${movieId}&plot=full&type=movie`;
+      const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${movieId}&plot=full&type=movie`;
   
       fetch(apiUrl)
         .then(response => response.json())
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const promises = [];
   
         words.forEach(word => {
-          const apiUrl = `https://www.omdbapi.com/?apikey=5996182c&s=${encodeURIComponent(word)}&type=movie`;
+          const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${encodeURIComponent(word)}&type=movie`;
   
           promises.push(
             fetch(apiUrl)
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function getMovieRatings(movies) {
       const promises = movies.map(movie => {
-        const apiUrl = `https://www.omdbapi.com/?apikey=5996182c&i=${movie.imdbID}&type=movie`;
+        const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${movie.imdbID}&type=movie`;
         return fetch(apiUrl)
           .then(response => response.json())
           .then(data => data)
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const movieId = urlParams.get('movieId');
   
       if (movieId) {
-        const apiUrl = `https://www.omdbapi.com/?apikey=5996182c&i=${movieId}&plot=full&type=movie`;
+        const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${movieId}&plot=full&type=movie`;
   
         return fetch(apiUrl)
           .then(response => response.json())

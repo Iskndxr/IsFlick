@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function retrieveMovieDetails(movieId) {
-  const apiUrl = `https://www.omdbapi.com/?apikey=5996182c&i=${movieId}`;
+  const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${movieId}`;
 
   return fetch(apiUrl)
     .then(response => response.json())

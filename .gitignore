@@ -90,3 +90,6 @@ typings/
 
 # Electron-Forge
 out/
+
+# Local API key config
+src/config.js

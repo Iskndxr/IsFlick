@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const promises = [];
   
       words.forEach(word => {
-        const apiUrl = `https://www.omdbapi.com/?apikey=5996182c&s=${encodeURIComponent(word)}`;
+        const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${encodeURIComponent(word)}`;
   
         promises.push(fetch(apiUrl)
           .then(response => response.json())
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function getMovieRatings(movies) {
       const promises = movies.map(movie => {
-        const apiUrl = `https://www.omdbapi.com/?apikey=5996182c&i=${movie.imdbID}`;
+        const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${movie.imdbID}`;
         return fetch(apiUrl)
           .then(response => response.json())
           .then(data => data)
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     try {
                 
     //             for (let page = 1; page <= 5; page++) {
-    //                 const apiUrl = `https://www.omdbapi.com/?apikey=5996182c&s=${}&page=${page}`;
+    //                 const apiUrl = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${}&page=${page}`;
     
     //                 const response = await fetch(apiUrl);
     //                 const data = await response.json();
